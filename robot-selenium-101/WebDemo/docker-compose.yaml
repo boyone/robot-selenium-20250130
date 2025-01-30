@@ -1,0 +1,17 @@
+services:
+  web:
+    image: "boyone/webdemo:latest"
+    container_name: "webdemo"
+    ports:
+      - "7272:7272"
+
+  caddy:
+    image: "caddy:latest"
+    container_name: "caddy"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+    depends_on:
+      - web
