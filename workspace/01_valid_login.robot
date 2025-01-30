@@ -8,9 +8,9 @@ Library           SeleniumLibrary
 Valid Username And Password
     เปิดหน้า Login
     ใส่ Username    demo
-    ใส่ Password
+    ใส่ Password    mode
     กดปุ่ม
-    จะต้องเห็นข้อความ Welcome Page
+    จะต้องเห็นข้อความ    Welcome Page
     ปิด Browser
 
 *** Keywords ***
@@ -23,13 +23,15 @@ Valid Username And Password
     Input Text    id=username_field    text=${username}
 
 ใส่ Password
-    Input Password   id=password_field    password=mode
+    [Arguments]    ${password}
+    Input Password   id=password_field    password=${password}
 
 กดปุ่ม
     Click Button    id=login_button
     
-จะต้องเห็นข้อความ Welcome Page
-    Wait Until Page Contains     Welcome Page
+จะต้องเห็นข้อความ
+    [Arguments]    ${expected_message}
+    Wait Until Page Contains     ${expected_message}
 
 ปิด Browser
     Close Browser
