@@ -2,7 +2,8 @@
 Library           SeleniumLibrary
 
 *** Variables ***
-
+${URL}    https://dminer.in.th/
+${BROWSER}    edge
 
 *** Test Cases ***
 Valid Username And Password
@@ -15,7 +16,7 @@ Valid Username And Password
 
 *** Keywords ***
 เปิดหน้า Login
-    Open Browser    url=https://dminer.in.th/    browser=edge
+    Open Browser    url=${URL}    browser=${BROWSER}
 
 ใส่ Username
     [Arguments]    ${username}
