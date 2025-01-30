@@ -7,7 +7,7 @@ Library           SeleniumLibrary
 *** Test Cases ***
 Valid Username And Password
     เปิดหน้า Login
-    ใส่ Username
+    ใส่ Username    demo
     ใส่ Password
     กดปุ่ม
     จะต้องเห็นข้อความ Welcome Page
@@ -18,8 +18,9 @@ Valid Username And Password
     Open Browser    url=https://dminer.in.th/    browser=edge
 
 ใส่ Username
+    [Arguments]    ${username}
     Wait Until Element Is Visible    id=username_field
-    Input Text    id=username_field    text=demo
+    Input Text    id=username_field    text=${username}
 
 ใส่ Password
     Input Password   id=password_field    password=mode
