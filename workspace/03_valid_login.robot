@@ -9,12 +9,10 @@ ${BROWSER}    edge
 
 *** Test Cases ***
 Valid Username And Password
-    # เปิดหน้า Login
     ใส่ Username    demo
     ใส่ Password    mode
     กดปุ่ม
     จะต้องเห็นข้อความ    Welcome Page
-    # ปิด Browser
 
 *** Keywords ***
 เปิดหน้า Login
