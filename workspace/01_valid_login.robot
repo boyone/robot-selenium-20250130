@@ -19,3 +19,7 @@ Valid Username And Password
 
 ใส่ Username
     Input Text    id=username_field    text=demo
+
+ใส่ Password
+    Input Password   id=password_field    text=mode
+    
