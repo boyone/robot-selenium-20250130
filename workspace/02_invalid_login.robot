@@ -13,6 +13,46 @@ Invalid Username
     จะต้องเห็นข้อความ    Error Page
     ปิด Browser
 
+Invalid Password
+    เปิดหน้า Login
+    ใส่ Username    demo
+    ใส่ Password    invalid
+    กดปุ่ม
+    จะต้องเห็นข้อความ    Error Page
+    ปิด Browser
+
+Invalid Username And Password
+    เปิดหน้า Login
+    ใส่ Username    invalid
+    ใส่ Password    whatever
+    กดปุ่ม
+    จะต้องเห็นข้อความ    Error Page
+    ปิด Browser
+
+Empty Username
+    เปิดหน้า Login
+    ใส่ Username    ${EMPTY}
+    ใส่ Password    mode
+    กดปุ่ม
+    จะต้องเห็นข้อความ    Error Page
+    ปิด Browser
+
+Empty Password
+    เปิดหน้า Login
+    ใส่ Username    demo
+    ใส่ Password    ${EMPTY}
+    กดปุ่ม
+    จะต้องเห็นข้อความ    Error Page
+    ปิด Browser
+
+Empty Username And Password
+    เปิดหน้า Login
+    ใส่ Username    ${EMPTY}
+    ใส่ Password    ${EMPTY}
+    กดปุ่ม
+    จะต้องเห็นข้อความ    Error Page
+    ปิด Browser
+
 *** Keywords ***
 เปิดหน้า Login
     Open Browser    url=https://dminer.in.th/    browser=edge
