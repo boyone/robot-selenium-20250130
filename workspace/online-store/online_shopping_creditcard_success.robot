@@ -15,7 +15,7 @@ ${BROWSER}      edge
     ตรวจสอบผลการค้นหา    product-card-name-1    Balance Training Bicycle
     เลือกดูสินค้า    product-card-name-1
     ตรวจสอบจำนวนแต้มต่อชิ้นที่จะได้รับของ    product-detail-point    43 Points
-    # เพิ่มสินค้าลงตะกร้า    Balance Training Bicycle
+    เพิ่มสินค้าลงตะกร้า    Balance Training Bicycle
     # ตรวจสอบจำนวนแต้มต่อชิ้นที่จะได้รับของสินค้าในตะกร้า    product-1-point
     # ใส่ที่อยู่จัดส่งสินค้า
     # ...    พงศกร    รุ่งเรืองทรัพย์
@@ -52,3 +52,9 @@ ${BROWSER}      edge
 ตรวจสอบจำนวนแต้มต่อชิ้นที่จะได้รับของ
     [Arguments]    ${product_detail_point_locator}    ${expected_point}
     Wait Until Element Contains    id=${product_detail_point_locator}    ${expected_point}
+
+เพิ่มสินค้าลงตะกร้า
+    [Arguments]    ${product_name}
+    Click Button    id=product-detail-add-to-cart-btn
+    Click Button    id=header-menu-cart-btn
+    Wait Until Element Contains    xpath=//*[@id="product-1-name"]/a    ${product_name}
