@@ -20,7 +20,7 @@
 7. Additional tools
    1. [robocop](./additional-tools/README.md#robocop)
    2. [robotidy](./additional-tools/README.md#robotidy)
-8. robotframework-selenium 102: sck online store
+8. robotframework-selenium 102: [sck online store](https://github.com/SCK-SEAL-TEAM-One/sck-online-store)
    1. Start with `Test Scenarios`
 9. [Project Structure](./project-structure/README.md)
 10. [Chrome for testing](./chrome-for-testing/README.md)
