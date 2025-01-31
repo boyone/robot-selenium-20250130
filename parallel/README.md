@@ -118,14 +118,58 @@
   Teardown All
       ${date} =	Get Current Date
       Log    Teardown All: ${RANDOM}, ${date}
-  
+
   Setup
       ${random} =    Generate Random String    4    [NUMBERS]abc
       Log    Test Setup: ${random}
       VAR    ${test_random}    ${random}    scope=TEST
-  
+
   Teardown
       Log    Teardown: ${test_random}
   ```
 
 ## Selenium Grid
+
+![standalone](../images/parallel/standalone.png)
+
+![hub and node](../images/parallel/hub-and-node.png)
+
+![distributed](../images/parallel/distributed.png)
+
+1. Setup Selenium Grid
+
+2. Setup Remote URL
+
+   ```robot
+   *** Variables ***
+   ${URL}    https://dminer.in.th/
+   ${BROWSER}    firefox
+   ${REMOTE_URL}    None
+
+   *** Test Cases ***
+   ...
+
+   *** Keywords ***
+   เปิดหน้า Login
+       Open Browser    url=${URL}    browser=${BROWSER}    remote_url=${REMOTE_URL}
+   ```
+
+3. Run with `robot`
+
+   ```sh
+   robot -v REMOTE_URL:http://127.0.0.1:4444/wd/hub 04_invalid_login.robot 05_invalid_login.robot
+   ```
+
+4. Run with `pabot`
+
+   ```sh
+   pabot -v REMOTE_URL:http://127.0.0.1:4444/wd/hub 04_invalid_login.robot 05_invalid_login.robot
+   ```
+
+   ```sh
+   pabot --testlevelsplit -v REMOTE_URL:http://127.0.0.1:4444/wd/hub 04_invalid_login.robot 05_invalid_login.robot
+   ```
+
+   ```sh
+   pabot --testlevelsplit  --processes 8 -v REMOTE_URL:http://127.0.0.1:4444/wd/hub 04_invalid_login.robot 05_invalid_login.robot
+   ```

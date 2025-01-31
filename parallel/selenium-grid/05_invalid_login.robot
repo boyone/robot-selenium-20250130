@@ -6,6 +6,7 @@ Test Teardown     ปิด Browser
 *** Variables ***
 ${URL}    https://dminer.in.th/
 ${BROWSER}    firefox
+${REMOTE_URL}    None
 
 *** Test Cases ***
 Invalid Username
@@ -46,7 +47,7 @@ Empty Username And Password
 
 *** Keywords ***
 เปิดหน้า Login
-    Open Browser    url=${URL}    browser=${BROWSER}    remote_url=http://127.0.0.1:4444/wd/hub
+    Open Browser    url=${URL}    browser=${BROWSER}    remote_url=${REMOTE_URL}
 
 ใส่ Username
     [Arguments]    ${username}
