@@ -44,11 +44,11 @@
 2. Usage
 
    ```sh
-   robotidy
+   robotidy .
    ```
 
    ```sh
-   robotidy --diff --check
+   robotidy --diff --check .
    ```
 
    ```sh
