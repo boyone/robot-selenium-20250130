@@ -49,11 +49,11 @@
   ```
 
   ```sh
-  pabot --testlevelsplit
+  pabot --testlevelsplit .
   ```
 
   ```sh
-  pabot --testlevelsplit --processes 8
+  pabot --testlevelsplit --processes 8 .
   ```
 
 - Suite3.robot
